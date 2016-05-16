@@ -5,6 +5,8 @@ var posts = require('./mock/posts.json');
 
 var app = express();
 
+app.use('/static', express.static(__dirname + '/public')); // use defines middleware -- logic for handling request before it arrives at a route
+
 app.set('view engine', 'jade'); //defines different settings in express app: set engine to jade for template rendering
 app.set('views', __dirname + '/templates'); //set template location, __dirname makes path relative to file, and not node process start location
 
