@@ -29,6 +29,14 @@ app.get('/blog/:title?', function (req, res) { // : indicates parameter, ? indic
     }
 });
 
+app.get('/posts', function(req, res){
+    if (req.query.raw) {
+        res.json(posts);
+    } else {
+        res.json(postsList); 
+    }
+});
+
 app.listen('8080', function() {
     console.log('Frontend server is running at 8080...');
 });
