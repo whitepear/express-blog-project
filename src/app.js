@@ -15,7 +15,8 @@ app.set('view engine', 'jade'); //defines different settings in express app: set
 app.set('views', __dirname + '/templates'); //set template location, __dirname makes path relative to file, and not node process start location
 
 app.get('/', function (req, res) {
-    res.render('index'); // no need for extension, as engine has been set to jade on line 8
+    var path = req.path; // get url path from current request
+    res.render('index', { path: path }); // no need for extension, as engine has been set to jade on line 8
 });
 
 app.get('/blog/:title?', function (req, res) { // : indicates parameter, ? indicates parameter is optional
