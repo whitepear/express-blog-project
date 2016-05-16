@@ -5,7 +5,8 @@
   "main": "server.js",
   "author": "whitepear",
   "dependencies": {
-    "express": "^4.13.4"
+    "express": "^4.13.4",
+    "jade": "^1.11.0"
   },
   "scripts": {
     "start": "node app.js"
